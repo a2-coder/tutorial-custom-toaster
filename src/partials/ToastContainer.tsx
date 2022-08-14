@@ -1,29 +1,9 @@
 import ToastMessage from "../components/ToastMessage"
+import { useToasterStore } from "../stores/toaster"
 
 const ToastContainer = () => {
 
-  const messages = [
-    {
-      context: "default" as const,
-      message: "This is a default message"
-    },
-    {
-      context: "info" as const,
-      message: "This is an info message"
-    },
-    {
-      context: "success"  as const,
-      message: "This is a success message"
-    },
-    {
-      context: "warning" as const,
-      message: "This is a warning message"
-    },
-    {
-      context: "error" as const,
-      message: "This is an error message"
-    }
-  ];
+  const messages = useToasterStore(state => state.messages);
 
   return (
     <div className="absolute top-0 w-full flex flex-col space-y-3 items-center p-3">
