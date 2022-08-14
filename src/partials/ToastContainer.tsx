@@ -8,8 +8,8 @@ const ToastContainer = () => {
   return (
     <div className="absolute top-0 w-full flex flex-col space-y-3 items-center p-3">
       {
-        messages.map(({ context, message }) => (
-          <ToastMessage key={message} context={context} message={message} />
+        messages.map(({ context, message, id }) => (
+          <ToastMessage key={id} context={context} message={message} />
         ))
       }
     </div>

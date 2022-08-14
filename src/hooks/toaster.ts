@@ -19,7 +19,7 @@ export function useToaster() {
     store.addMessage({ id, message, context });
     // remove the message after `timeout` seconds
     setTimeout(() => store.removeMessage(id), timeout);
-  }, [store])
+  }, [store, generateId])
 
   return useMemo(() => ({
     default: (message: string, timeout = 3000) => show(message, "default", timeout),
