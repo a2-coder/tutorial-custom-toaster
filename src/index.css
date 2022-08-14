@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+button, a {
+  @apply transition duration-300 ease-in;
+}
