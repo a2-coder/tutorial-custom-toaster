@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom"
 import Header from "../partials/Header"
 import Sidebar from "../partials/Sidebar"
+import ToastContainer from "../partials/ToastContainer"
 
 const MainLayout = () => {
   return (
@@ -8,7 +9,8 @@ const MainLayout = () => {
       <Header />
       <div className="flex-1 flex h-0">
         <Sidebar />
-        <div className="flex-1 w-0 h-full overflow-y-auto">
+        <div className="flex-1 w-0 h-full overflow-y-auto relative">
+          <ToastContainer />
           <Outlet />
         </div>
       </div>
