@@ -16,7 +16,7 @@ const Button = ({ text, type = 'secondary', onClick }: IButtonProps) => {
   }, [type]);
 
   return (
-    <button className={classes}>
+    <button onClick={onClick} className={classes}>
       {text}
     </button>
   )
