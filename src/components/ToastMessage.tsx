@@ -7,8 +7,7 @@ import {
   RiAlarmWarningLine,
   RiCheckDoubleLine,
 } from "react-icons/ri";
-
-type ToastMessageContext = "default" | "info" | "success" | "warning" | "error";
+import { ToastMessageContext } from "../stores/toaster";
 
 interface IToastMessageProps {
   message: string;
