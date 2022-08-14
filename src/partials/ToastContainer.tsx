@@ -1,5 +1,4 @@
 import ToastMessage from "../components/ToastMessage"
-import { useToaster } from "../hooks/toaster";
 import { useToasterStore } from "../stores/toaster"
 
 const ToastContainer = () => {
