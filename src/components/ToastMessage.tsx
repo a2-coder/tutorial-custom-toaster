@@ -1,4 +1,5 @@
 import { cloneElement, useMemo } from "react";
+import { motion } from "framer-motion";
 import {
   RiNotification3Line,
   RiCloseLine,
@@ -65,7 +66,12 @@ const ToastMessage = ({ message, context = "default", onClose }: IToastMessagePr
   }, [context]);
 
   return (
-    <div className="h-9 bg-slate-100 rounded flex items-center space-x-4">
+    <motion.div
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: +50, opacity: 0 }}
+      layout
+      className="h-9 bg-slate-100 rounded flex items-center space-x-4">
       <div className={`w-9 h-9 ${bgColor} flex items-center justify-center text-slate-100 rounded-l`}>
         {cloneElement(icon, { className: "w-4 h-4" })}
       </div>
@@ -73,7 +79,7 @@ const ToastMessage = ({ message, context = "default", onClose }: IToastMessagePr
       <button onClick={onClose} className="w-9 h-9 text-slate-300 hover:text-slate-500 flex items-center justify-center">
         <RiCloseLine className="w-4 h-4" />
       </button>
-    </div>
+    </motion.div>
   );
 };
 
